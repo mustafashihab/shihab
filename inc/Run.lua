@@ -1,13 +1,12 @@
 --[[
-█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
-█                      █                                   █                              █          █        █                █
-█                      █                        █       █                           █                █     █             █
-█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
-                   █   █                 █   █       █                █      █ █  █  █ █     █            █
-                   █   █                 █   █       █                █      █                  █     █               █
-█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
-تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
-┊@OO1OOOBOT ‿ @OO1OOO 
+─▄█▀█▄──▄███▄─
+▐█░██████████▌
+─██▒█████████─
+──▀████████▀──┊@hlh313
+─────▀██▀─────
+┊ＭᎯẊ ‿ @hlh_313
+تم تطوير وبرمجة السورس من قبل حسوني ┊
+┊@hlh313 ‿ @hlh_313 
 #-------------------------------------------------------------------
 ]]
 Er_cjson , JSON  = pcall(require, "cjson")
@@ -98,7 +97,7 @@ redis:set(shihab..":DataCenter:",GetUser.information.DataCenter)
 redis:set(shihab..":UserNameBot:",BOT_User)
 redis:set(shihab..":NameBot:",BOT_NAME)
 redis:hset(shihab..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
-redis:set("shihab_INSTALL","Yes")
+redis:set("TH3shihab_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.information.username
 info.userbot  = BOT_User
@@ -108,7 +107,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..GetUser.information.id..") \n🔖┊شكرا لاستخدامك سورس شهاب \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..GetUser.information.id..") \n🔖┊شكرا لاستخدامك سورس ماكس \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..GetUser.information.id..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -124,16 +123,15 @@ end
 function Start_Bot()
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
-print('\27[0;33m>>'..--[[
-█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
-█                      █                                   █                              █          █        █                █
-█                      █                        █       █                           █                █     █             █
-█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
-                   █   █                 █   █       █                █      █ █  █  █ █     █            █
-                   █   █                 █   █       █                █      █                  █     █               █
-█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
-تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
-┊@OO1OOOBOT ‿ @OO1OOO 
+print('\27[0;33m>>'..[[
+─▄█▀█▄──▄███▄─
+▐█░██████████▌
+─██▒█████████─
+──▀████████▀──┊@hlh313
+─────▀██▀─────
+┊ＭᎯẊ ‿ @hlh_313
+تم تطوير وبرمجة السورس من قبل حسوني ┊
+┊@hlh313 ‿ @hlh_313 
 -------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config() 
@@ -162,17 +160,17 @@ print('\27[31m! Error File Not "Run inc/locks.lua" !\n\27[39m')
 print(tostring(io.popen("lua inc/locks.lua"):read('*all')))
 end
 
-print('\27[0;33m>>'..--[[
-█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
-█                      █                                   █                              █          █        █                █
-█                      █                        █       █                           █                █     █             █
-█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
-                   █   █                 █   █       █                █      █ █  █  █ █     █            █
-                   █   █                 █   █       █                █      █                  █     █               █
-█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
-تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
-┊@OO1OOOBOT ‿ @OO1OOO 
-#-------------------------------------------------------------------
+print('\27[0;33m>>'..[[
+─▄█▀█▄──▄███▄─
+▐█░██████████▌
+─██▒█████████─
+──▀████████▀──┊@hlh313
+─────▀██▀─────
+┊ＭᎯẊ ‿ @hlh_313
+تم تطوير وبرمجة السورس من قبل حسوني ┊
+┊@hlh313 ‿ @hlh_313 
+-------------------------------------------------------------------
+                                                  
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
 ..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..shihab..')\027[0;32m\n'
@@ -421,15 +419,15 @@ function tdcli_update_callback(data)
 	UpdateSourceStart = false
 	EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Run.lua','./inc/Run.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/locks.lua','./inc/locks.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Script.lua','./inc/Script.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/games.lua','./plugins/games.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
@@ -458,12 +456,12 @@ function tdcli_update_callback(data)
 	end)
 	end 
 	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/mustafashihab/shihab/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/games.lua','./plugins/games.lua')
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
@@ -691,4 +689,12 @@ function tdcli_update_callback(data)
 	end)
 	end
 	
-	en
+	end
+	end)
+	end
+	
+
+	end
+	
+	
+end
