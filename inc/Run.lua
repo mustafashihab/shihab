@@ -1,12 +1,14 @@
 --[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@hlh313
-─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
-تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
+█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
+█                      █                                   █                              █          █        █                █
+█                      █                        █       █                           █                █     █             █
+█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
+                   █   █                 █   █       █                █      █ █  █  █ █     █            █
+                   █   █                 █   █       █                █      █                  █     █               █
+█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
+]]
+تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
+┊@OO1OOOBOT ‿ @OO1OOO 
 #-------------------------------------------------------------------
 ]]
 Er_cjson , JSON  = pcall(require, "cjson")
@@ -90,14 +92,14 @@ print('\n\27[1;31m￤ USERNAME is Incorrect Please Check it!\n￤ لآ يوجد 
 create_config(Token)
 end  
 print('\n\27[1;36m￤تم آدخآل مـعرف آلمـطـور بنجآح , سـوف يتم تشـغيل آلسـورس آلآن .\n￤Success Save USERNAME IS_ID: \27[0;32m['..GetUser.information.id..']\n\27[0;39;49m')
-max = Token:match("(%d+)")
-redis:set(max..":VERSION",GetUser.information.Source_version)
-redis:set(max..":SUDO_ID:",GetUser.information.id)
-redis:set(max..":DataCenter:",GetUser.information.DataCenter)
-redis:set(max..":UserNameBot:",BOT_User)
-redis:set(max..":NameBot:",BOT_NAME)
-redis:hset(max..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
-redis:set("TH3max_INSTALL","Yes")
+shihab = Token:match("(%d+)")
+redis:set(shihab..":VERSION",GetUser.information.Source_version)
+redis:set(shihab..":SUDO_ID:",GetUser.information.id)
+redis:set(shihab..":DataCenter:",GetUser.information.DataCenter)
+redis:set(shihab..":UserNameBot:",BOT_User)
+redis:set(shihab..":NameBot:",BOT_NAME)
+redis:hset(shihab..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
+redis:set("TH3shihab_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.information.username
 info.userbot  = BOT_User
@@ -123,30 +125,31 @@ end
 function Start_Bot()
 local TokenBot = io.open('./inc/Token.txt', "r")
 if not TokenBot then
-print('\27[0;33m>>'..[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@hlh313
-─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
-تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
--------------------------------------------------------------------
+print('\27[0;33m>>'..--[[
+█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
+█                      █                                   █                              █          █        █                █
+█                      █                        █       █                           █                █     █             █
+█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
+                   █   █                 █   █       █                █      █ █  █  █ █     █            █
+                   █   █                 █   █       █                █      █                  █     █               █
+█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
+تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
+┊@OO1OOOBOT ‿ @OO1OOO 
+#-------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config() 
 else
 Token = TokenBot:read('*a')
 File = {}
 local login = io.popen("whoami"):read('*a'):gsub('[\n\r]+', '') 
-max = Token:match("(%d+)")
-our_id = tonumber(max)
+shihab = Token:match("(%d+)")
+our_id = tonumber(shihab)
 ApiToken = "https://api.telegram.org/bot"..Token
-Bot_User = redis:get(max..":UserNameBot:")
-SUDO_ID = tonumber(redis:get(max..":SUDO_ID:"))
-SUDO_USER = redis:hgetall(max..'username:'..SUDO_ID).username
-version = redis:get(max..":VERSION")
-DataCenter = redis:get(max..":DataCenter:")
+Bot_User = redis:get(shihab..":UserNameBot:")
+SUDO_ID = tonumber(redis:get(shihab..":SUDO_ID:"))
+SUDO_USER = redis:hgetall(shihab..'username:'..SUDO_ID).username
+version = redis:get(shihab..":VERSION")
+DataCenter = redis:get(shihab..":DataCenter:")
 
 local ok, ERROR =  pcall(function() loadfile("./inc/functions.lua")() end)
 if not ok then 
@@ -160,20 +163,20 @@ print('\27[31m! Error File Not "Run inc/locks.lua" !\n\27[39m')
 print(tostring(io.popen("lua inc/locks.lua"):read('*all')))
 end
 
-print('\27[0;33m>>'..[[
-─▄█▀█▄──▄███▄─
-▐█░██████████▌
-─██▒█████████─
-──▀████████▀──┊@hlh313
-─────▀██▀─────
-┊ＭᎯẊ ‿ @hlh_313
-تم تطوير وبرمجة السورس من قبل حسوني ┊
-┊@hlh313 ‿ @hlh_313 
--------------------------------------------------------------------
-                                                  
+print('\27[0;33m>>'..--[[
+█ █ █ █ █   █                        █       █                                 █  █             █ █ █ █ █
+█                      █                                   █                              █          █        █                █
+█                      █                        █       █                           █                █     █             █
+█ █ █ █ █   █ █ █ █ █    █       █ █ █ █ █       █                 █     █ █ █ █  
+                   █   █                 █   █       █                █      █ █  █  █ █     █            █
+                   █   █                 █   █       █                █      █                  █     █               █
+█ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
+تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
+┊@OO1OOOBOT ‿ @OO1OOO 
+#-------------------------------------------------------------------
 ]]..'\027[0;32m'
 ..'¦ TOKEN_BOT: \27[1;34m'..Token..'\027[0;32m\n'
-..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..max..')\027[0;32m\n'
+..'¦ BOT__INFO: \27[1;34m'.. Bot_User..'\27[0;36m » ('..shihab..')\027[0;32m\n'
 ..'¦ INFO_SUDO: \27[1;34m'..SUDO_USER:gsub([[\_]],'_')..'\27[0;36m » ('..SUDO_ID..')\27[m\027[0;32m\n'
 ..'¦ Run_Scrpt: \27[1;34m./inc/Script.lua\027[0;32m \n'
 ..'¦ LOGIN__IN: \27[1;34m'..login..'\027[0;32m \n'
@@ -231,19 +234,19 @@ end
 if msg.reply_to_message_id_ ~= 0 then msg.reply_id = msg.reply_to_message_id_ end
 msg.type = GetType(msg.chat_id_)
 
-if msg.type == "pv" and redis:get(max..':mute_pv:'..msg.chat_id_) then
+if msg.type == "pv" and redis:get(shihab..':mute_pv:'..msg.chat_id_) then
 print('\27[1;31m is_MUTE_BY_FLOOD\27[0m')
 return false 
 end
 
-if redis:get(max..'sender:'..msg.sender_user_id_..':flood') then
+if redis:get(shihab..'sender:'..msg.sender_user_id_..':flood') then
 print("\27[1;31mThis Flood Sender ...\27[0")
 Del_msg(msg.chat_id_,msg.id_)
 return false
 end
 
 
-if redis:get(max..'group:add'..msg.chat_id_) then 
+if redis:get(shihab..'group:add'..msg.chat_id_) then 
 msg.GroupActive = true
 else
 msg.GroupActive = false
@@ -253,23 +256,23 @@ if msg.sender_user_id_ == SUDO_ID then
 msg.TheRankCmd = 'المطور 👨🏻‍✈️' 
 msg.TheRank = 'مطور اساسي 👨🏻‍✈️' 
 msg.Rank = 1
-elseif redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) then 
+elseif redis:sismember(shihab..':SUDO_BOT:',msg.sender_user_id_) then 
 msg.TheRankCmd = 'المطور 👨🏽‍💻'
 msg.TheRank = 'مطور البوت 👨🏽‍💻'
 msg.Rank = 2
-elseif msg.GroupActive and redis:sismember(max..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(shihab..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'المنشىء 👷🏽'
 msg.TheRank = 'المنشىء 👷🏽'
 msg.Rank = 3
-elseif msg.GroupActive and redis:sismember(max..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(shihab..'owners:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'المدير 👨🏼‍⚕️' 
 msg.TheRank = 'مدير البوت 👨🏼‍⚕️' 
 msg.Rank = 4
-elseif msg.GroupActive and redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(shihab..'admins:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRankCmd = 'الادمن 👨🏼‍🎓'
 msg.TheRank = 'ادمن في البوت 👨🏼‍🎓'
 msg.Rank = 5
-elseif msg.GroupActive and redis:sismember(max..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
+elseif msg.GroupActive and redis:sismember(shihab..'whitelist:'..msg.chat_id_,msg.sender_user_id_) then 
 msg.TheRank = 'عضو مميز ⭐️'
 msg.Rank = 6
 elseif msg.sender_user_id_ == our_id then
@@ -318,7 +321,7 @@ end
 
 --[[ المكتومين ]]
 if MuteUser(msg.chat_id_,msg.sender_user_id_) then 
-if msg.Admin then redis:srem(max..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.Admin then redis:srem(shihab..'is_silent_users:'..msg.chat_id_,msg.sender_user_id_) return end
 print("\27[1;31m User is Silent\27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
@@ -326,7 +329,7 @@ end
 
 --[[ المحظورين ]]
 if Check_Banned((msg.adduser or msg.sender_user_id_),msg.sender_user_id_) then
-if msg.Admin then redis:srem(max..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
+if msg.Admin then redis:srem(shihab..'banned:'..msg.chat_id_,msg.sender_user_id_) return end
 print('\27[1;31m is_BANED_USER\27[0m')
 Del_msg(msg.chat_id_, msg.id_)
 kick_user((msg.adduser or msg.sender_user_id_), msg.chat_id_)
@@ -334,7 +337,7 @@ return false
 end
 
 if not msg.Admin then
-if redis:get(max..'mute_text'..msg.chat_id_) then --قفل الدردشه
+if redis:get(shihab..'mute_text'..msg.chat_id_) then --قفل الدردشه
 print("\27[1;31m Chat is Mute \27[0m")
 Del_msg(msg.chat_id_,msg.id_)
 return false 
@@ -345,59 +348,59 @@ return false
 end 
 end 
 
-if ScriptFile and ScriptFile.max then 
-if msg.text and ScriptFile.imax then
-for k, max in pairs(ScriptFile.max) do
-local SearchText = msg.text:match(max)
+if ScriptFile and ScriptFile.shihab then 
+if msg.text and ScriptFile.ishihab then
+for k, shihab in pairs(ScriptFile.shihab) do
+local SearchText = msg.text:match(shihab)
 if SearchText then
 if not CheckFlood(msg) then
 return false 
 end
-local GetMsg = ScriptFile.imax(msg,{msg.text:match(max)})
+local GetMsg = ScriptFile.ishihab(msg,{msg.text:match(shihab)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",max.." | Plugin is: \27[1;32mScript.lua\27[0m")
+print("\27[1;35m¦This_Msg : ",shihab.." | Plugin is: \27[1;32mScript.lua\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 return false
 end 
 end
 end
 end
-if ScriptFile.dmax then
-if ScriptFile.dmax(msg) == false then
+if ScriptFile.dshihab then
+if ScriptFile.dshihab(msg) == false then
 return false
 end
 print("\27[1;35m¦Msg_IN_Process : Proc _ Script.lua\27[0m")
 end
 
 for name,Plug in pairs(File) do
-if Plug.max then 
-if msg.text and Plug.imax then
-for k, max in pairs(Plug.max) do
-local SearchText = msg.text:match(max)
+if Plug.shihab then 
+if msg.text and Plug.ishihab then
+for k, shihab in pairs(Plug.shihab) do
+local SearchText = msg.text:match(shihab)
 if SearchText then
 if not CheckFlood(msg) then
 return false
 end
-local GetMsg = Plug.imax(msg,{msg.text:match(max)})
+local GetMsg = Plug.ishihab(msg,{msg.text:match(shihab)})
 if GetMsg then
-print("\27[1;35m¦This_Msg : ",max.." | Plugin is: \27[1;32m"..name.."\27[0m")
+print("\27[1;35m¦This_Msg : ",shihab.." | Plugin is: \27[1;32m"..name.."\27[0m")
 sendMsg(msg.chat_id_,msg.id_,GetMsg)
 end 
 return false
 end
 end
 end
-if Plug.dmax then
-Plug.dmax(msg)
+if Plug.dshihab then
+Plug.dshihab(msg)
 print("\27[1;35m¦Msg_IN_Process : \27[1;32"..name.."\27[0m")
 end
 else
-print("The File "..name.." Not Runing in The Source max")
+print("The File "..name.." Not Runing in The Source shihab")
 end 
 
 end
 else
-print("The File Script.lua Not Runing in The Source max")
+print("The File Script.lua Not Runing in The Source shihab")
 
 end
 end
@@ -407,7 +410,7 @@ function tdcli_update_callback(data)
 
 	if data.ID == "UpdateMessageSendFailed" then 
     if msg.sender_user_id_ then
-	redis:srem(max..'users',msg.sender_user_id_)
+	redis:srem(shihab..'users',msg.sender_user_id_)
 	end
 	elseif data.ID == "UpdateMessageSendSucceeded" then
 	if Refresh_Start then
@@ -419,15 +422,15 @@ function tdcli_update_callback(data)
 	UpdateSourceStart = false
 	EditMsg(data.message_.chat_id_,data.message_.id_,'10% - |█          |')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'20% - |███         |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Run.lua','./inc/Run.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'40% - |█████       |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/locks.lua','./inc/locks.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'60% - |███████     |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Script.lua','./inc/Script.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'80% - |█████████   |')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/games.lua','./plugins/games.lua')
 	EditMsg(data.message_.chat_id_,data.message_.id_,'100% - |█████████████|\n\n🔝*¦* السورس الى اصدار \n📟*¦* تم اعاده تشغيل السورس بنجاح')
 	dofile("./inc/Run.lua")
 	print("Update Source And Reload ~ ./inc/Run.lua")
@@ -456,12 +459,12 @@ function tdcli_update_callback(data)
 	end)
 	end 
 	if msg.text== 'Update Source' and msg.sender_user_id_ == SUDO_ID then
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Run.lua','./inc/Run.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/Script.lua','./inc/Script.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/functions.lua','./inc/functions.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/inc/locks.lua','./inc/locks.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
-	download_file('https://raw.githubusercontent.com/MAXTELE/MAX/master/plugins/games.lua','./plugins/games.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Run.lua','./inc/Run.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/Script.lua','./inc/Script.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/functions.lua','./inc/functions.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/inc/locks.lua','./inc/locks.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/zhrfa.lua','./plugins/zhrfa.lua')
+	download_file('https://raw.githubusercontent.com/shihabTELE/shihab/master/plugins/games.lua','./plugins/games.lua')
 	sendMsg(msg.chat_id_,msg.id_,'👷🏽| {* تــم تحديث وتثبيت السورس  *} 📡.\n\n👨🏼‍💼| { Bot is Update » }👍🏿',nil,function(arg,data)
 	dofile("./inc/Run.lua")
 	print("Reload ~ ./inc/Run.lua")
@@ -523,14 +526,14 @@ function tdcli_update_callback(data)
 	print('¦'..msg.content_.ID)
 	msg.game = true
 	elseif msg.content_.ID == "MessageChatDeleteMember" then
-	if redis:get(max..'mute_tgservice'..msg.chat_id_) then
+	if redis:get(shihab..'mute_tgservice'..msg.chat_id_) then
 	Del_msg(msg.chat_id_,msg.id_)
 	end
 	elseif msg.content_.ID == "MessageChatAddMembers" then
-	if redis:get(max..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID or redis:sismember(max..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(max..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(max..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
+	if redis:get(shihab..'group:add'..msg.chat_id_) and (msg.sender_user_id_ == SUDO_ID or redis:sismember(shihab..':SUDO_BOT:',msg.sender_user_id_) or redis:sismember(shihab..':MONSHA_BOT:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(shihab..'owners:'..msg.chat_id_,msg.sender_user_id_) or redis:sismember(shihab..'admins:'..msg.chat_id_,msg.sender_user_id_)) then 
 	msg.Admin = true
 	end
-	local lock_bots = redis:get(max..'lock_bots'..msg.chat_id_)
+	local lock_bots = redis:get(shihab..'lock_bots'..msg.chat_id_)
 	ISBOT = false
 	ZISBOT = false
 	for i=0,#msg.content_.members_ do
@@ -542,10 +545,10 @@ function tdcli_update_callback(data)
 	end
 	end
 	end
-	if redis:get(max..'mute_tgservice'..msg.chat_id_) then
+	if redis:get(shihab..'mute_tgservice'..msg.chat_id_) then
 	Del_msg(msg.chat_id_,msg.id_)
 	end
-	if ZISBOT and redis:get(max..'lock_bots_by_kick'..msg.chat_id_) then
+	if ZISBOT and redis:get(shihab..'lock_bots_by_kick'..msg.chat_id_) then
 	kick_user(msg.sender_user_id_, msg.chat_id_)
 	end
 
@@ -565,14 +568,14 @@ function tdcli_update_callback(data)
 	input_inFo(msg)
 	if msg.content_.ID == "MessageChatChangeTitle" then
 	print("¦ messageChatChangeTitle : { "..msg.content_.title_.." } ")
-	if redis:get(max..'group:add'..msg.chat_id_) then
-	redis:set(max..'group:name'..msg.chat_id_,msg.content_.title_)
+	if redis:get(shihab..'group:add'..msg.chat_id_) then
+	redis:set(shihab..'group:name'..msg.chat_id_,msg.content_.title_)
 	end
 	end 
 	
 	elseif data.ID == "UpdateNewChat" then  
-	if redis:get(max..'group:add'..data.chat_.id_) then
-	redis:set(max..'group:name'..data.chat_.id_,data.chat_.title_)
+	if redis:get(shihab..'group:add'..data.chat_.id_) then
+	redis:set(shihab..'group:name'..data.chat_.id_,data.chat_.title_)
 	end
 	elseif data.ID == "UpdateChannel" then  
 	if data.channel_.status_.ID == "chatMemberStatusKicked" then 
@@ -581,9 +584,9 @@ function tdcli_update_callback(data)
 	elseif data.channel_.status_.ID == "ChatMemberStatusEditor" then 
 	print('¦ The Bot is Admin')
 	elseif data.channel_.status_.ID == "ChatMemberStatusKicked" then 
-	if redis:get(max..'group:add-100'..data.channel_.id_) then
-	local linkGroup = (redis:get(max..'linkGroup-100'..data.channel_.id_) or "")
-	local NameGroup = (redis:get(max..'group:name-100'..data.channel_.id_) or "")
+	if redis:get(shihab..'group:add-100'..data.channel_.id_) then
+	local linkGroup = (redis:get(shihab..'linkGroup-100'..data.channel_.id_) or "")
+	local NameGroup = (redis:get(shihab..'group:name-100'..data.channel_.id_) or "")
 	send_msg(SUDO_ID,"📛┇قام شخص بطرد البوت من المجموعه الاتيه : \n🏷┇ألايدي : `-100"..data.channel_.id_.."`\n🗯┇الـمجموعه : "..Flter_Markdown(NameGroup).."\n\n📮┇تـم مسح كل بيانات المجموعه بنـجاح ")
 	rem_data_group('-100'..data.channel_.id_)
 	end
@@ -595,52 +598,52 @@ function tdcli_update_callback(data)
 	local All_Groups = JSON.decode(GetInfo)
 	for k,IDS in pairs(All_Groups.Groups) do
 	redis:mset(
-	max..'group:name'..k,IDS.Title,
-	max..'num_msg_max'..k,5,
-	max..'group:add'..k,true,
-	max..'lock_link'..k,true,
-	max..'lock_spam'..k,true,
-	max..'lock_webpage'..k,true,
-	max..'lock_markdown'..k,true,
-	max..'lock_flood'..k,true,
-	max..'lock_bots'..k,true,
-	max..'mute_forward'..k,true,
-	max..'mute_contact'..k,true,
-	max..'mute_document'..k,true,
-	max..'mute_inline'..k,true,
-	max..'lock_username'..k,true,
-	max..'replay'..k,true
+	shihab..'group:name'..k,IDS.Title,
+	shihab..'num_msg_shihab'..k,5,
+	shihab..'group:add'..k,true,
+	shihab..'lock_link'..k,true,
+	shihab..'lock_spam'..k,true,
+	shihab..'lock_webpage'..k,true,
+	shihab..'lock_markdown'..k,true,
+	shihab..'lock_flood'..k,true,
+	shihab..'lock_bots'..k,true,
+	shihab..'mute_forward'..k,true,
+	shihab..'mute_contact'..k,true,
+	shihab..'mute_document'..k,true,
+	shihab..'mute_inline'..k,true,
+	shihab..'lock_username'..k,true,
+	shihab..'replay'..k,true
 	)
-	redis:sadd(max..'group:ids',k) 
+	redis:sadd(shihab..'group:ids',k) 
 
 	if IDS.Admins then
 	for user,ID in pairs(IDS.Admins) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..'admins:'..k,ID)
+	redis:hset(shihab..'username:'..ID,'username',user)
+	redis:sadd(shihab..'admins:'..k,ID)
 	end
 	end
 	if IDS.Creator then
 	for user,ID in pairs(IDS.Creator) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..':MONSHA_BOT:'..k,ID)
+	redis:hset(shihab..'username:'..ID,'username',user)
+	redis:sadd(shihab..':MONSHA_BOT:'..k,ID)
 	end
 	end
 	if IDS.Owner then
 	for user,ID in pairs(IDS.Owner) do
-	redis:hset(max..'username:'..ID,'username',user)
-	redis:sadd(max..'owners:'..k,ID)
+	redis:hset(shihab..'username:'..ID,'username',user)
+	redis:sadd(shihab..'owners:'..k,ID)
 	end
 	end
 	end
 	io.popen("rm -fr ../.telegram-cli/data/document/*")
-	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع آلنسـخهہ‏‏ آلآحتيآطـيهہ\n⚖️*¦* حآليآ عدد مـجمـوعآتگ هہ‏‏يهہ‏‏ *'..redis:scard(max..'group:ids')..'* 🌿\n✓')
+	sendMsg(Uploaded_Groups_CH,Uploaded_Groups_MS,'📦*¦* تم رفع آلنسـخهہ‏‏ آلآحتيآطـيهہ\n⚖️*¦* حآليآ عدد مـجمـوعآتگ هہ‏‏يهہ‏‏ *'..redis:scard(shihab..'group:ids')..'* 🌿\n✓')
 	end
 	elseif data.ID == "UpdateUser" then  
 	if data.user_.type_.ID == "UserTypeDeleted" then
 	print("¦ userTypeDeleted")
-	redis:srem(max..'users',data.user_.id_)
+	redis:srem(shihab..'users',data.user_.id_)
 	elseif data.user_.type_.ID == "UserTypeGeneral" then
-	local CheckUser = redis:hgetall(max..'username:'..data.user_.id_).username
+	local CheckUser = redis:hgetall(shihab..'username:'..data.user_.id_).username
 	if data.user_.username_  then 
 	USERNAME = '@'..data.user_.username_:gsub('_',[[\_]])
 	else
@@ -648,7 +651,7 @@ function tdcli_update_callback(data)
 	end	
 	if CheckUser and CheckUser ~= USERNAME  then
 	print("¦ Enter Update User ")
-	redis:hset(max..'username:'..data.user_.id_,'username',USERNAME)
+	redis:hset(shihab..'username:'..data.user_.id_,'username',USERNAME)
 	end 
 	end
 	elseif data.ID == "UpdateMessageEdited" then
@@ -660,7 +663,7 @@ function tdcli_update_callback(data)
 	end,nil)
 	elseif data.ID == "UpdateOption" and data.value_.value_ == "Ready" then
 	print(" ||  ------------------------[ Loading For loding list Chat ]--------------------- ||")
-	local groups = redis:smembers(max..'group:ids')
+	local groups = redis:smembers(shihab..'group:ids')
 	local GroupsIsFound = 0
 	for i = 1, #groups do 
 	GroupTitle(groups[i],function(arg,data)
@@ -680,7 +683,7 @@ function tdcli_update_callback(data)
 	print(GroupsIsFound..' : '..#groups..' : '..i)
 	if #groups == i then
 	
-	local pv = redis:smembers(max..'users')
+	local pv = redis:smembers(shihab..'users')
 	local NumPvDel = 0
 	for i = 1, #pv do
 	GroupTitle(pv[i],function(arg,data)
