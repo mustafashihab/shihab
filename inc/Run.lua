@@ -6,7 +6,6 @@
                    █   █                 █   █       █                █      █ █  █  █ █     █            █
                    █   █                 █   █       █                █      █                  █     █               █
 █ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
-
 تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
 ┊@OO1OOOBOT ‿ @OO1OOO 
 #-------------------------------------------------------------------
@@ -99,7 +98,7 @@ redis:set(shihab..":DataCenter:",GetUser.information.DataCenter)
 redis:set(shihab..":UserNameBot:",BOT_User)
 redis:set(shihab..":NameBot:",BOT_NAME)
 redis:hset(shihab..'username:'..GetUser.information.id,'username','@'..GetUser.information.username:gsub('_',[[\_]]))
-redis:set("TH3shihab_INSTALL","Yes")
+redis:set("shihab_INSTALL","Yes")
 info = {}
 info.username = '@'..GetUser.information.username
 info.userbot  = BOT_User
@@ -109,7 +108,7 @@ Cr_file = io.open("./inc/Token.txt", "w")
 Cr_file:write(Token)
 Cr_file:close() 
 print('\27[1;36m￤Token.txt is created.\27[m')
-local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..GetUser.information.id..") \n🔖┊شكرا لاستخدامك سورس ماكس \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
+local Text = "🙋🏼‍♂️┊اهلا عزيزي [المطور الاساسي](tg://user?id="..GetUser.information.id..") \n🔖┊شكرا لاستخدامك سورس شهاب \n📡┊أرســل  الان /start\n♦️┊لاضهار الاوامر للمطور  المجهزه بالكيبورد\n\n⚡️"
 https.request(Api_Token..'/sendMessage?chat_id='..GetUser.information.id..'&text='..URL.escape(Text)..'&parse_mode=Markdown')
 os.execute([[
 rm -f ./README.md
@@ -135,7 +134,7 @@ print('\27[0;33m>>'..--[[
 █ █ █ █ █   █                █    █       █                █      █                  █     █ █ █ █ █ 
 تم تطوير وبرمجة السورس من قبل مصطفى شهاب ┊
 ┊@OO1OOOBOT ‿ @OO1OOO 
-#-------------------------------------------------------------------
+-------------------------------------------------------------------
 ]]..'\027[0;32m')
 create_config() 
 else
@@ -690,4 +689,6 @@ function tdcli_update_callback(data)
 	NumPvDel = NumPvDel + 1
 	print("Geting Ok : "..NumPvDel)
 	end)
+	end
+	
 	en
